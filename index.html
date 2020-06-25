@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+  <body style=" background-color:#AAAAAA">
+  <section style="margin-top:50px; font-family:'Montserrat',sans-serif" >
+
+    <div class="jumbotron container">
+      <h1 style="text-align:center">Password Generator</h1>
+      <div class="form-group" style="text-align:center; padding:30px; margin:50px"  >
+        <form id="myForm" action="{{url_for('gen_pass')}}" method="post"  >
+          <label >Enter number of digits:</label>
+              <p><input type="text" name="digit" style="width:300px" ></p>
+            <label >Enter number of characters:</label>
+                <p><input type="text" name="char" style="width:300px"></p>
+              <button class="btn  btn-sm btn-outline-dark" style="margin-right:20px">Generate</button>
+              <a href="/" class="btn btn-sm btn-outline-dark" style="">Reset</a>
+        </form>
+   <br>
+
+        <!-- <script>
+            function submit() {
+  /*Put all the data posting code here*/
+             document.getElementById("myForm").reset();
+           }
+      </script> -->
+
+          {% with messages=get_flashed_messages() %}
+              {% if messages %}
+                  <p style="color:red">{{messages}}</p>
+              {% else %}
+              <p>Password : </p>
+                <input  value="{{password}}" style="width:300px">
+
+              {% endif %}
+          {% endwith %}
+
+      </div>
+
+</div>
+
+</section>
+
+  </body>
+</html>
