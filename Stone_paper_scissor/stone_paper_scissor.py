@@ -2,7 +2,7 @@ from flask import Flask , render_template , request , url_for, flash
 import random
 
 app=Flask(__name__)
-app.secret_key="harsimranrishamikdujedijindjaanneteinadavyahhonakudratvalonpakkaaetehokerehnaae"
+app.secret_key="riharshamsimkauran"
 user_score,comp_score=0,0
 turn=1
 user=''
