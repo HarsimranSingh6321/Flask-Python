@@ -93,6 +93,9 @@ def play():
         if request.form.get('paper') or request.form.get('stone') or request.form.get('scissor'):
             flash("Game over, click on 'Play Again' button to restart the match",'dark')
             return render_template('play.html',user=user,user_score=user_score , comp_score=comp_score , comp=comp,turn=turn)
+            
+    if request.method == 'GET':
+        return render_template('play.html',user=user,user_score=user_score , comp_score=comp_score , comp=comp,turn=turn)
        
 @app.route('/again')
 def again():
